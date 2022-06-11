@@ -104,12 +104,10 @@ division.addEventListener("click", (e) => {
 
 //------------------------------------------------------------------------------------------
 
-let calcBtn = document.getElementById("calc_btn");
 function nextTask() {
     document.getElementById("final_result").innerHTML = "";
     document.getElementById("corAnsw").innerHTML = "";
     userResult.value = "";
-    calcBtn.disabled = false;
     userResult.disabled = false;
     userResult.focus();
     let min = parseInt(tools.firstNumber);
@@ -124,9 +122,6 @@ function nextTask() {
     }
     if (tools.operator === "&#247;" && divRes != parseInt(divRes)) {
         nextTask();
-    }
-    if (userResult.value === "") {
-        calcBtn.disabled = true;
     }
 };
 
@@ -212,6 +207,9 @@ let funcContainer = {
 };
 
 function calculateTask() {
+    if (userResult.value === "") {
+        return false;
+    }
     if (tools.operator === "&#43;") {
         funcContainer.additionFunc();
     } else if (tools.operator === "&#8722;") {
@@ -225,7 +223,6 @@ function calculateTask() {
 
 userResult.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && userResult.value != "") {
-        e.preventDefault();
         calculateTask();
     }
 });
