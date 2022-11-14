@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./img/pngwing.com.png">
+    <title>Maths exercises</title>
+</head>
+
+<body id="body">
+    <main>
+        <div class="top_main">
+            <h3>Correct answers:
+                <span
+                    id="correct_answ_count">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Incorrect
+                answers:
+                <span id="incorrect_answ_count">0</span>
+            </h3>
+        </div>
+        <div class="top">
+            <div class="numbers_main">
+                <h3>From <span id="fNumHeading">0</span> to <span id="sNumHeading">0</span></h3>
+                <button type="button" id="select_nums">Numbers</button>
+            </div>
+            <div class="operators_main">
+                <h3>Operator <span id="operatorHeading">&#43;</span></h3>
+                <button type="button" id="select_operator">Operators</button>
+            </div>
+        </div>
+        <div class="next">
+            <button type="button" id="next_task" onclick="nextTask()" disabled>Next task</button>
+        </div>
+        <div class="maths_oper">
+            <h3><span id="first_number_task">0</span> <span id="opInTask">&#43;</span> <span
+                    id="second_number_task">0</span> = <input type="number" id="user_result" autofocus disabled>
+                <span id="corAnsw"></span>
+            </h3>
+            <button type="button" id="calc_btn" onclick="calculateTask()">Calculate</button>
+        </div>
+        <div class="res_main">
+            <h3 id="final_result"></h3>
+        </div>
+
+        <div class="dropdown_num">
+            <h4>Select numbers</h4>
+            <h3>From <input type="number" id="userFirstNum"> to <input type="number" id="userSecondNum"></h3>
+            <button type="button" id="chooseBtn">OK</button>
+            <p id="numbers_err"></p>
+        </div>
+        <div class="operators_cont">
+            <button type="button" id="Add">Addition &#43;</button><br>
+            <button type="button" id="Subt">Subtraction &#8722;</button><br>
+            <button type="button" id="Multi">Multiplication &#215;</button><br>
+            <button type="button" id="Div">Division &#247;</button>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
